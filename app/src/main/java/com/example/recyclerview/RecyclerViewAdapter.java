@@ -33,8 +33,9 @@ class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyVie
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.data=studentList.get(position);
-        holder.textViewRollno.setText(String.valueOf(holder.data.getRollNo()));
+        holder.imageViewStd.setImageResource(holder.data.getImageID());
         holder.textViewStdName.setText(holder.data.getName());
+        holder.textViewRollno.setText(String.valueOf(holder.data.getRollNo()));
         holder.textViewGender.setText(holder.data.getGender());
 
     }
@@ -45,14 +46,14 @@ class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyVie
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        ImageView imageViewFriend;
+        ImageView imageViewStd;
         TextView textViewStdName;
         TextView textViewRollno;
         TextView textViewGender;
         Student data;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            imageViewFriend = itemView.findViewById(R.id.imageView);
+            imageViewStd = itemView.findViewById(R.id.imageView);
             textViewRollno = itemView.findViewById(R.id.rollno);
             textViewStdName = itemView.findViewById(R.id.name);
             textViewGender = itemView.findViewById(R.id.gender);
